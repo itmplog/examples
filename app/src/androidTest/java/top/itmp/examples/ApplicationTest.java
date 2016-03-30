@@ -1,4 +1,4 @@
-package itmp.top.examples;
+package top.itmp.examples;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;

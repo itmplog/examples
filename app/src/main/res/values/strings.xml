@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">examples</string>
+    <string name="retrofit2test">RetroFit2Test</string>
 </resources>
