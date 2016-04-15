@@ -2,8 +2,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="top.itmp.examples">
 
-
-
     <application
         android:name=".ExamplesApplication"
         android:allowBackup="true"
@@ -30,6 +28,7 @@
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.EXAMPLES_CODE" />
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
             </intent-filter>
         </activity>
     </application>
