@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="top.itmp.examples">
 
+
+
     <application
         android:name=".ExamplesApplication"
         android:allowBackup="true"
@@ -9,6 +11,12 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
+        <!-- This is how we can request a library but still allow the app
+        to be installed if it doesn't exist. -->
+        <uses-library android:name="com.example.will.never.exist" android:required="false" />
+
+
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

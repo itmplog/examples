@@ -5,6 +5,7 @@ import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
@@ -20,22 +21,23 @@ import java.util.Map;
 
 public class MainActivity extends AppCompatActivity {
 
-    public static final String CATEGORY_SAMPLE_CODE = "android.intent.category.EXAMPLES_CODE";
+    private static final String CATEGORY_SAMPLE_CODE = "android.intent.category.EXAMPLES_CODE";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         //setContentView(R.layout.activity_main);
         ListView listView = new ListView(this);
-
         setContentView(listView);
 
         Intent intent = getIntent();
-        String path = intent.getStringExtra("top.itmp.examples.Path");
+        String path = intent.getStringExtra("top.itmp.examples.path");
 
         if (path == null) {
             path = "";
         }
 
+        Log.v("path", path + "####");
         listView.setAdapter(new SimpleAdapter(this, getData(path),
                 android.R.layout.simple_list_item_1, new String[]{"title"},
                 new int[]{android.R.id.text1}));
@@ -56,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
         List<Map<String, Object>> myData = new ArrayList<Map<String, Object>>();
 
         Intent mainIntent = new Intent(Intent.ACTION_MAIN, null);
-        mainIntent.addCategory(CATEGORY_SAMPLE_CODE);
+        mainIntent.addCategory(CATEGORY_SAMPLE_CODE);    //Intent.CATEGORY_SAMPLE_CODE);
 
         PackageManager pm = getPackageManager();
         List<ResolveInfo> list = pm.queryIntentActivities(mainIntent, 0);
@@ -127,7 +129,7 @@ public class MainActivity extends AppCompatActivity {
     protected Intent browseIntent(String path) {
         Intent result = new Intent();
         result.setClass(this, MainActivity.class);
-        result.putExtra("top.itmp.examples.Path", path);
+        result.putExtra("top.itmp.examples.path", path);
         return result;
     }
 
