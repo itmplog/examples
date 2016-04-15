@@ -1,11 +1,11 @@
 package top.itmp.examples.network;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 import top.itmp.examples.R;
+import top.itmp.examples.base.BaseActivity;
 
-public class Retrofit2Test extends AppCompatActivity {
+public class Retrofit2Test extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

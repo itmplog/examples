@@ -3,7 +3,6 @@ package top.itmp.examples;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -19,7 +18,9 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class MainActivity extends AppCompatActivity {
+import top.itmp.examples.base.BaseActivity;
+
+public class MainActivity extends BaseActivity {
 
     private static final String CATEGORY_SAMPLE_CODE = "android.intent.category.EXAMPLES_CODE";
 
@@ -50,6 +51,7 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent = new Intent((Intent)map.get("intent"));
                 intent.addCategory(CATEGORY_SAMPLE_CODE);
                 startActivity(intent);
+                overridePendingTransition(android.R.anim.slide_out_right, android.R.anim.slide_in_left);
             }
         });
     }
