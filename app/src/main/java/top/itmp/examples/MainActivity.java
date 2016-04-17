@@ -46,6 +46,7 @@ public class MainActivity extends BaseActivity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                @SuppressWarnings("unchecked")
                 Map<String, Object> map = (Map<String, Object>)parent.getItemAtPosition(position);
 
                 Intent intent = new Intent((Intent)map.get("intent"));
@@ -56,7 +57,7 @@ public class MainActivity extends BaseActivity {
     }
 
     protected List<Map<String, Object>> getData(String prefix) {
-        List<Map<String, Object>> myData = new ArrayList<Map<String, Object>>();
+        List<Map<String, Object>> myData = new ArrayList<>();
 
         Intent mainIntent = new Intent(Intent.ACTION_MAIN, null);
         mainIntent.addCategory(CATEGORY_SAMPLE_CODE);
@@ -79,7 +80,7 @@ public class MainActivity extends BaseActivity {
 
         int len = list.size();
 
-        Map<String, Boolean> entries = new HashMap<String, Boolean>();
+        Map<String, Boolean> entries = new HashMap<>();
 
         for (int i = 0; i < len; i++) {
             ResolveInfo info = list.get(i);
@@ -135,7 +136,7 @@ public class MainActivity extends BaseActivity {
     }
 
     protected void addItem(List<Map<String, Object>> data, String name, Intent intent) {
-        Map<String, Object> temp = new HashMap<String, Object>();
+        Map<String, Object> temp = new HashMap<>();
         temp.put("title", name);
         temp.put("intent", intent);
         data.add(temp);
