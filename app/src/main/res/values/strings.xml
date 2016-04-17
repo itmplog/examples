@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">examples</string>
     <string name="retrofit2test">network/RetroFit2Test</string>
+    <string name="accelerometerplay">samples/AccelerometerPlay</string>
 </resources>

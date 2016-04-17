@@ -51,7 +51,6 @@ public class MainActivity extends BaseActivity {
                 Intent intent = new Intent((Intent)map.get("intent"));
                 intent.addCategory(CATEGORY_SAMPLE_CODE);
                 startActivity(intent);
-                overridePendingTransition(android.R.anim.slide_out_right, android.R.anim.slide_in_left);
             }
         });
     }
