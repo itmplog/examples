@@ -2,4 +2,16 @@
     <string name="app_name">examples</string>
     <string name="retrofit2test">network/RetroFit2Test</string>
     <string name="accelerometerplay">samples/AccelerometerPlay</string>
+    <string name="new_alarm">samples/NewAlarm</string>
+     <string name="alarm_service">
+        This shows how to schedule a repeating alarm that starts a service.</string>
+    <string name="start_alarm_service">Start Alarm Service</string>
+    <string name="stop_alarm_service">Stop Alarm Service</string>
+    <string name="repeating_started">
+        Repeating timer started. Starts AlarmService every 30 seconds.</string>
+    <string name="alarm_service_started">The sample service is running.</string>
+    <string name="alarm_service_label">Sample Alarm Service</string>
+    <string name="alarm_service_finished">The sample service is no longer running.</string>
+    <string name="repeating_stopped">
+        Repeating timer stopped. AlarmService will no longer be started.</string>
 </resources>

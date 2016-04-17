@@ -51,6 +51,23 @@
                 <category android:name="android.intent.category.SAMPLE_CODE" />
             </intent-filter>
         </activity>
+
+        <activity
+            android:name=".samples.newalarm.AlarmActivity"
+            android:label="@string/new_alarm"
+            android:parentActivityName=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.EXAMPLES_CODE" />
+                <category android:name="android.intent.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+
+        <service
+            android:name=".samples.newalarm.AlarmService"
+            android:label="@string/alarm_service"
+            android:process="top.itmp.examples.newalarm">
+        </service>
     </application>
 
 </manifest>
