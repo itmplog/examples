@@ -22,6 +22,8 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.BitmapFactory.Options;
+import android.graphics.Paint;
+import android.graphics.Rect;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
@@ -33,6 +35,7 @@ import android.util.DisplayMetrics;
 import android.view.Display;
 import android.view.Surface;
 import android.view.View;
+import android.view.Window;
 import android.view.WindowManager;
 
 import top.itmp.examples.R;
@@ -74,8 +77,8 @@ public class AccelerometerPlayActivity extends Activity {
         mDisplay = mWindowManager.getDefaultDisplay();
 
         // Create a bright wake lock
-        mWakeLock = mPowerManager.newWakeLock(PowerManager.SCREEN_BRIGHT_WAKE_LOCK, getClass()
-                .getName());
+        mWakeLock = mPowerManager.newWakeLock(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON,
+                getClass().getName()); //PowerManager.SCREEN_BRIGHT_WAKE_LOCK, getClass()
 
         // instantiate our simulation view and set it as the activity's content
         mSimulationView = new SimulationView(this);
@@ -90,6 +93,14 @@ public class AccelerometerPlayActivity extends Activity {
          * screen stays on, since the user will likely not be fiddling with the
          * screen or buttons.
          */
+        getWindow().getDecorView().setSystemUiVisibility(
+                View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+                        | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
+                        | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+                        | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+                        | View.SYSTEM_UI_FLAG_FULLSCREEN
+                        | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
+        );
         mWakeLock.acquire();
 
         // Start the simulation
@@ -138,6 +149,9 @@ public class AccelerometerPlayActivity extends Activity {
         private float mHorizontalBound;
         private float mVerticalBound;
         private final ParticleSystem mParticleSystem = new ParticleSystem();
+
+        private Rect rect;
+        private Paint paint;
 
         /*
          * Each of our particle holds its previous and current position, its
@@ -419,7 +433,11 @@ public class AccelerometerPlayActivity extends Activity {
              * draw the background
              */
 
-            canvas.drawBitmap(mWood, 0, 0, null);
+            rect = new Rect(0, 0, getWidth(), getHeight());
+            paint = new Paint();
+            paint.setFilterBitmap(true);
+            canvas.drawBitmap(mWood, null, rect, paint);
+            //canvas.drawBitmap(mWood, 0, 0, mDisplay.getWidth(), mDisplay.getHeight(),null);
 
             /*
              * compute the new position of our object, based on accelerometer
