@@ -22,7 +22,9 @@ import android.app.PendingIntent;
 import android.app.Service;
 import android.content.Intent;
 import android.os.Binder;
+import android.os.Handler;
 import android.os.IBinder;
+import android.os.Message;
 import android.os.Parcel;
 import android.os.RemoteException;
 import android.widget.Toast;
@@ -75,8 +77,22 @@ public class AlarmService extends Service {
     // A Notification to send to the Notification Manager when the service is started.
     Notification mNotification;
 
+    Notification.Builder mBuilder;
+
     // A Binder, used as the lock object for the worker thread.
     IBinder mBinder = new AlarmBinder();
+
+    Handler handler = new Handler(){
+        @Override
+        public void handleMessage(Message msg) {
+            //super.handleMessage(msg);
+            if(msg.what == 0x111){
+                mBuilder.setProgress(100, msg.arg1, false);
+                mNotificationManager.notify(R.string.alarm_service_started,
+                        mBuilder.build());
+            }
+        }
+    };
 
     // A Thread object that will run the background task
     Thread mWorkThread;
@@ -103,7 +119,7 @@ public class AlarmService extends Service {
                 }
             }
             // Stops the current service. In response, Android calls onDestroy().
-            stopSelf();
+            //stopSelf();
         }
     };
 
@@ -147,6 +163,25 @@ public class AlarmService extends Service {
         );
         // Starts the thread
         mWorkThread.start();
+
+        new Thread(){
+            @Override
+            public void run() {
+                //super.run();
+                for(int i = 0; i <= 15; i++)
+                try{
+                    Thread.sleep(1000);
+                    Message msg = new Message();
+                        msg.arg1 = 100 * i / 15;
+                    msg.what = 0x111;
+                    handler.sendMessage(msg);
+                }catch (InterruptedException e){
+                    e.printStackTrace();
+                }
+
+                stopSelf();
+            }
+        }.start();
     }
 
     /**
@@ -192,14 +227,16 @@ public class AlarmService extends Service {
         );
 
         // Build the notification object.
-        mNotification = new Notification.Builder(this)  //  The builder requires the context
+        mBuilder = new Notification.Builder(this)  //  The builder requires the context
                 .setSmallIcon(R.drawable.stat_sample)  // the status icon
                 .setTicker(notificationText)  // the status text
                 .setWhen(System.currentTimeMillis())  // the time stamp
                 .setContentTitle(getText(R.string.alarm_service_label))  // the label of the entry
                 .setContentText(notificationText)  // the contents of the entry
-                .setContentIntent(mContentIntent)  // The intent to send when the entry is clicked
-                .build();
+                .setProgress(100, 0, false)  // set Progress
+                .setContentIntent(mContentIntent);  // The intent to send when the entry is clicked
+
+        mNotification = mBuilder.build();
 
         // Sets a unique ID for the notification and sends it to NotificationManager to be
         // displayed. The ID is the integer marker for the notification string, which is
