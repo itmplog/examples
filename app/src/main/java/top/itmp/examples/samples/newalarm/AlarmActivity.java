@@ -16,18 +16,23 @@
 
 package top.itmp.examples.samples.newalarm;
 
-import android.app.Activity;
+import android.app.ActivityManager;
 import android.app.AlarmManager;
 import android.app.PendingIntent;
+import android.content.Context;
 import android.content.Intent;
 import android.os.SystemClock;
 import android.os.Bundle;
+import android.support.v4.content.ContextCompat;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.Chronometer;
 import android.widget.Toast;
 
 import top.itmp.examples.R;
+import top.itmp.examples.base.BaseActivity;
+import top.itmp.examples.utils.SharedPreUtils;
 
 /**
  * This is the activity that controls AlarmService.
@@ -41,7 +46,7 @@ import top.itmp.examples.R;
  * </p>
  */
 
-public class AlarmActivity extends Activity {
+public class AlarmActivity extends BaseActivity {
     // 30 seconds in milliseconds
     private static final long THIRTY_SECONDS_MILLIS = 30 * 1000;
 
@@ -50,6 +55,8 @@ public class AlarmActivity extends Activity {
 
     // Contains a handle to the system alarm service
     private AlarmManager mAlarmManager;
+
+    private Chronometer chronometer;
 
     /**
      * This method is called when Android starts the activity. It initializes the UI.
@@ -86,6 +93,25 @@ public class AlarmActivity extends Activity {
 
         // Gets the handle to the system alarm service
         mAlarmManager = (AlarmManager)getSystemService(ALARM_SERVICE);
+
+        chronometer = (Chronometer)findViewById(R.id.chronometer);
+        chronometer.setTextColor(ContextCompat.getColor(this, R.color.colorPrimary));
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        long base = SharedPreUtils.getLong(this, "chronometer", -1);
+        if(base != -1){
+            chronometer.setBase(base);
+            chronometer.start();
+        }
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        SharedPreUtils.setLong(this, "chronometer", chronometer.getBase());
     }
 
     // Creates a new anonymous click listener for the start button. It starts the repeating
@@ -106,6 +132,8 @@ public class AlarmActivity extends Activity {
                 mAlarmSender  // when the alarm goes off, sends this Intent
             );
 
+            // tick tock
+            chronometer.start();
             // Notifies the user that the repeating countdown timer has been started
             Toast.makeText(
                 AlarmActivity.this,  //  the current context
@@ -124,6 +152,9 @@ public class AlarmActivity extends Activity {
             // Cancels the repeating countdown timer
             mAlarmManager.cancel(mAlarmSender);
 
+            chronometer.stop();
+            chronometer.setBase(SystemClock.elapsedRealtime());
+            SharedPreUtils.remove(AlarmActivity.this, "chronometer");
             // Notifies the user that the repeating countdown timer has been stopped
             Toast.makeText(
                 AlarmActivity.this,  //  the current context
@@ -132,4 +163,14 @@ public class AlarmActivity extends Activity {
             ).show(); // display the message
         }
     };
+
+    private boolean isMyServiceRunning(Class<?> serviceClass) {
+        ActivityManager manager = (ActivityManager) getSystemService(Context.ACTIVITY_SERVICE);
+        for (ActivityManager.RunningServiceInfo service : manager.getRunningServices(Integer.MAX_VALUE)) {
+            if (serviceClass.getName().equals(service.service.getClassName())) {
+                return true;
+            }
+        }
+        return false;
+    }
 }
