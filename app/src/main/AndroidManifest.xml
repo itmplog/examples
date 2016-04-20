@@ -78,6 +78,18 @@
             <category android:name="android.intent.category.SAMPLE_CODE" />
         </intent-filter>
         </activity>
+
+        <activity android:name="android.app.AliasActivity"
+            android:label="@string/alias"
+            android:parentActivityName=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.EXAMPLES_CODE" />
+                <category android:name="android.intent.category.SAMPLE_CODE" />
+            </intent-filter>
+            <meta-data android:name="android.app.alias"
+                android:resource="@xml/alias" />
+        </activity>
     </application>
 
 </manifest>

@@ -15,4 +15,5 @@
     <string name="repeating_stopped">
         Repeating timer stopped. AlarmService will no longer be started.</string>
     <string name="progress_notification">temps/ProgressNotification</string>
+    <string name="alias">samples/Alias</string>
 </resources>
