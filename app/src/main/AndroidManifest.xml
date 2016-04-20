@@ -5,6 +5,9 @@
     <uses-permission android:name="android.permission.VIBRATE"/>
     <uses-permission android:name="android.permission.WAKE_LOCK"/>
     <uses-permission android:name="android.permission.MANAGE_DOCUMENTS"/>
+    <uses-permission android:name="android.permission.NFC" />
+
+    <uses-feature android:name="android.hardware.nfc" />
 
     <application
         android:name=".ExamplesApplication"
@@ -90,6 +93,21 @@
             </intent-filter>
             <meta-data android:name="android.app.alias"
                 android:resource="@xml/alias" />
+        </activity>
+
+        <activity android:name=".samples.beam.Beam"
+            android:label="@string/beam"
+            android:launchMode="singleTop">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.EXAMPLES_CODE" />
+                <category android:name="android.intent.category.SAMPLE_CODE" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.nfc.action.NDEF_DISCOVERED" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:mimeType="application/com.example.android.beam" />
+            </intent-filter>
         </activity>
     </application>
 
