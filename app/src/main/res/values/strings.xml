@@ -14,4 +14,5 @@
     <string name="alarm_service_finished">The sample service is no longer running.</string>
     <string name="repeating_stopped">
         Repeating timer stopped. AlarmService will no longer be started.</string>
+    <string name="progress_notification">temps/ProgressNotification</string>
 </resources>

@@ -68,6 +68,16 @@
             android:label="@string/alarm_service"
             android:process="top.itmp.examples.newalarm">
         </service>
+
+        <activity android:name=".temps.ProgressNotification"
+            android:label="@string/progress_notification"
+            android:parentActivityName=".MainActivity">
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN"/>
+            <category android:name="android.intent.category.EXAMPLES_CODE" />
+            <category android:name="android.intent.category.SAMPLE_CODE" />
+        </intent-filter>
+        </activity>
     </application>
 
 </manifest>
