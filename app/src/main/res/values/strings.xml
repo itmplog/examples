@@ -22,4 +22,5 @@
         against another Android device that supports Android Beam to send a
         message.</string>
     <string name="menu_settings">Android Beam settings</string>
+    <string name="first">train/FirstActivity</string>
 </resources>

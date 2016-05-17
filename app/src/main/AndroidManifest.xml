@@ -2,9 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="top.itmp.examples">
 
-    <uses-permission android:name="android.permission.VIBRATE"/>
-    <uses-permission android:name="android.permission.WAKE_LOCK"/>
-    <uses-permission android:name="android.permission.MANAGE_DOCUMENTS"/>
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.MANAGE_DOCUMENTS" />
     <uses-permission android:name="android.permission.NFC" />
 
     <uses-feature android:name="android.hardware.nfc" />
@@ -17,12 +17,13 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <!-- This is how we can request a library but still allow the app
-        to be installed if it doesn't exist. -->
+        <!--
+        This is how we can request a library but still allow the app
+        to be installed if it doesn't exist.
+        -->
         <uses-library
             android:name="com.example.will.never.exist"
             android:required="false" />
-
 
         <activity android:name=".MainActivity">
             <intent-filter>
@@ -37,31 +38,31 @@
             android:parentActivityName=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.EXAMPLES_CODE" />
                 <category android:name="android.intent.category.SAMPLE_CODE" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".samples.accelerometerplay.AccelerometerPlayActivity"
             android:label="@string/accelerometerplay"
+            android:parentActivityName=".MainActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen"
-            android:parentActivityName=".MainActivity">
-
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.EXAMPLES_CODE" />
                 <category android:name="android.intent.category.SAMPLE_CODE" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".samples.newalarm.AlarmActivity"
             android:label="@string/new_alarm"
             android:parentActivityName=".MainActivity">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.EXAMPLES_CODE" />
                 <category android:name="android.intent.category.SAMPLE_CODE" />
             </intent-filter>
@@ -70,43 +71,60 @@
         <service
             android:name=".samples.newalarm.AlarmService"
             android:label="@string/alarm_service"
-            android:process="top.itmp.examples.newalarm">
-        </service>
+            android:process="top.itmp.examples.newalarm"></service>
 
-        <activity android:name=".temps.ProgressNotification"
+        <activity
+            android:name=".temps.ProgressNotification"
             android:label="@string/progress_notification"
             android:parentActivityName=".MainActivity">
-        <intent-filter>
-            <action android:name="android.intent.action.MAIN"/>
-            <category android:name="android.intent.category.EXAMPLES_CODE" />
-            <category android:name="android.intent.category.SAMPLE_CODE" />
-        </intent-filter>
-        </activity>
-
-        <activity android:name="android.app.AliasActivity"
-            android:label="@string/alias"
-            android:parentActivityName=".MainActivity">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.EXAMPLES_CODE" />
                 <category android:name="android.intent.category.SAMPLE_CODE" />
             </intent-filter>
-            <meta-data android:name="android.app.alias"
+        </activity>
+        <activity
+            android:name="android.app.AliasActivity"
+            android:label="@string/alias"
+            android:parentActivityName=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.EXAMPLES_CODE" />
+                <category android:name="android.intent.category.SAMPLE_CODE" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.app.alias"
                 android:resource="@xml/alias" />
         </activity>
-
-        <activity android:name=".samples.beam.Beam"
+        <activity
+            android:name=".samples.beam.Beam"
             android:label="@string/beam"
             android:launchMode="singleTop">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.EXAMPLES_CODE" />
                 <category android:name="android.intent.category.SAMPLE_CODE" />
             </intent-filter>
             <intent-filter>
                 <action android:name="android.nfc.action.NDEF_DISCOVERED" />
+
                 <category android:name="android.intent.category.DEFAULT" />
+
                 <data android:mimeType="application/com.example.android.beam" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".train.FirstActivity"
+            android:label="@string/first">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.EXAMPLES_CODE" />
+                <category android:name="android.intent.category.SAMPLE_CODE" />
             </intent-filter>
         </activity>
     </application>
