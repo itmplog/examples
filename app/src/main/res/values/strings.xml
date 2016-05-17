@@ -26,4 +26,7 @@
     <string name="edit_message">This is a EditText!!</string>
     <string name="button_send">Send</string>
     <string name="display_message">Display Message</string>
+    <string name="actionbaractivity">train/ActionBar</string>
+    <string name="action_search">Search</string>
+    <string name="action_settings">Settings</string>
 </resources>

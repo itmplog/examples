@@ -134,6 +134,14 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".train.FirstActivity"/>
         </activity>
+        <activity
+            android:name=".train.ActionBarActivity"
+            android:label="@string/actionbaractivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.EXAMPLES_CODE" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>
