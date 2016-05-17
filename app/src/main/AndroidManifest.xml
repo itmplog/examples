@@ -127,6 +127,13 @@
                 <category android:name="android.intent.category.SAMPLE_CODE" />
             </intent-filter>
         </activity>
+        <activity android:name=".train.DisplayMessageActivity"
+            android:label="@string/display_message"
+            android:parentActivityName=".train.FirstActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".train.FirstActivity"/>
+        </activity>
     </application>
 
 </manifest>

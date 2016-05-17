@@ -23,4 +23,7 @@
         message.</string>
     <string name="menu_settings">Android Beam settings</string>
     <string name="first">train/FirstActivity</string>
+    <string name="edit_message">This is a EditText!!</string>
+    <string name="button_send">Send</string>
+    <string name="display_message">Display Message</string>
 </resources>
