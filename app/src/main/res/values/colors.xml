@@ -7,4 +7,10 @@
     <color name="accent">#03A9F4</color>
     <color name="primary_text">#212121</color>
     <color name="secondary_text">#727272</color>
+    <drawable name="tab_selected">#aa01b6ed</drawable>
+    <drawable name="tab_unselected">#aa3d7cb7</drawable>
+    <drawable name="tab_unselected_focused">#aaccffdd</drawable>
+    <drawable name="tab_selected_focused">#daaa</drawable>
+    <drawable name="tab_unselected_pressed">#dcae</drawable>
+    <drawable name="tab_selected_pressed">#e111</drawable>
 </resources>

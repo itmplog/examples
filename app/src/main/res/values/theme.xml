@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="CustomActionBarTheme"
+        parent="@android:style/Theme.Material.Light.DarkActionBar">
+        <item name="android:actionBarStyle">@style/CustomActionBar</item>
+
+        <!-- 支持库兼容 -->
+        <item name="actionBarStyle">@style/CustomActionBar</item>
+    </style>
+
+    <style name="CustomActionBar"
+        parent="@android:style/Widget.Holo.Light.ActionBar.Solid.Inverse">
+        <item name="android:background">@android:drawable/screen_background_light</item>
+
+        <!-- 支持库兼容 -->
+        <item name="background">@android:drawable/screen_background_light</item>
+    </style>
+</resources>

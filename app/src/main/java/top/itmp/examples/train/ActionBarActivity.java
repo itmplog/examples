@@ -1,5 +1,6 @@
 package top.itmp.examples.train;
 
+import android.app.Activity;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.Snackbar;
@@ -13,12 +14,12 @@ import top.itmp.examples.base.BaseActivity;
 /**
  * Created by hz on 16/5/17.
  */
-public class ActionBarActivity extends BaseActivity {
+public class ActionBarActivity extends Activity {
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        //getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 
     @Override

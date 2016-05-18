@@ -136,7 +136,8 @@
         </activity>
         <activity
             android:name=".train.ActionBarActivity"
-            android:label="@string/actionbaractivity">
+            android:label="@string/actionbaractivity"
+            android:theme="@style/CustomActionBarTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.EXAMPLES_CODE" />
