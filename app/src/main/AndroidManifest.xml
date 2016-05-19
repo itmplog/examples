@@ -7,8 +7,8 @@
     <uses-permission android:name="android.permission.MANAGE_DOCUMENTS" />
     <uses-permission android:name="android.permission.NFC" />
 
-    <uses-permission android:name="android.permission.CALL_PHONE"/>
-    <uses-permission android:name="android.permission.WRITE_CALENDAR"/>
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.WRITE_CALENDAR" />
 
     <uses-feature android:name="android.hardware.nfc" />
 
@@ -130,12 +130,13 @@
                 <category android:name="android.intent.category.SAMPLE_CODE" />
             </intent-filter>
         </activity>
-        <activity android:name=".train.DisplayMessageActivity"
+        <activity
+            android:name=".train.DisplayMessageActivity"
             android:label="@string/display_message"
             android:parentActivityName=".train.FirstActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".train.FirstActivity"/>
+                android:value=".train.FirstActivity" />
         </activity>
         <activity
             android:name=".train.ActionBarActivity"
@@ -150,8 +151,49 @@
             android:name=".train.IntentTest"
             android:label="@string/intent_test">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
-                <category android:name="android.intent.category.EXAMPLES_CODE"/>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.EXAMPLES_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".train.ShareActivity"
+            android:label="@string/share_activity">
+            <!-- filter for sending text; accepts SENDTO action with sms URI schemes -->
+            <intent-filter>
+                <action android:name="android.intent.action.SENDTO" />
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data android:scheme="sms" />
+                <data android:scheme="smsto" />
+            </intent-filter>
+            <!-- filter for sending text or images; accepts SEND action and text or image data -->
+            <intent-filter>
+                <action android:name="android.intent.action.SEND" />
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data android:mimeType="text/plain" />
+                <data android:mimeType="image/*" />
+            </intent-filter>
+
+            <intent-filter>
+                <action android:name="android.intent.action.SEND" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:mimeType="image/*" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.SEND" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:mimeType="text/plain" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.SEND_MULTIPLE" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:mimeType="image/*" />
+            </intent-filter>
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.EXAMPLES_CODE" />
             </intent-filter>
         </activity>
     </application>
