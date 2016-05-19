@@ -7,6 +7,9 @@
     <uses-permission android:name="android.permission.MANAGE_DOCUMENTS" />
     <uses-permission android:name="android.permission.NFC" />
 
+    <uses-permission android:name="android.permission.CALL_PHONE"/>
+    <uses-permission android:name="android.permission.WRITE_CALENDAR"/>
+
     <uses-feature android:name="android.hardware.nfc" />
 
     <application
@@ -141,6 +144,14 @@
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.EXAMPLES_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".train.IntentTest"
+            android:label="@string/intent_test">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.EXAMPLES_CODE"/>
             </intent-filter>
         </activity>
     </application>
