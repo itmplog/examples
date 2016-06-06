@@ -199,6 +199,15 @@
                 <category android:name="android.intent.category.EXAMPLES_CODE" />
             </intent-filter>
         </activity>
+
+        <activity
+            android:name=".volley.JsonRequest"
+            android:label="@string/json_request">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.EXAMPLES_CODE" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>

@@ -17,7 +17,6 @@ public class ExamplesApplication extends Application {
 
     private final static int DEFAULT_MAX_CACHE_SIZE = (int) (Runtime.getRuntime().maxMemory() / 1024);
     private final static int DEFAULT_CACHE_SIZE = DEFAULT_MAX_CACHE_SIZE / 8;
-    public final static String TAG = getContext().getClass().getSimpleName();
 
     private static Context context;
     private static RequestQueue requestQueue;
