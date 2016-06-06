@@ -4,6 +4,9 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 
+import com.android.volley.Request;
+
+import top.itmp.examples.ExamplesApplication;
 import top.itmp.examples.R;
 
 /**
@@ -31,5 +34,16 @@ public class BaseActivity extends AppCompatActivity {
             return true;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    public <T> void addToRequestQueue(Request<T> request){
+        if(request != null) {
+            request.setTag(this);
+            ExamplesApplication.getRequestQueue().add(request);
+        }
+    }
+
+    public void cancelAllRequest(){
+        ExamplesApplication.getRequestQueue().cancelAll(this);
     }
 }
