@@ -10,7 +10,13 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="top.itmp.examples.materail.Main2Activity"
+    tools:context="top.itmp.examples.material.Main2Activity"
     tools:showIn="@layout/activity_main2">
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:scrollbars="none"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
 
 </RelativeLayout>
