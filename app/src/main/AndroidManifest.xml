@@ -1,19 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="top.itmp.examples">
+          package="top.itmp.examples">
 
-    <uses-permission android:name="android.permission.VIBRATE" />
-    <uses-permission android:name="android.permission.WAKE_LOCK" />
-    <uses-permission android:name="android.permission.MANAGE_DOCUMENTS" />
-    <uses-permission android:name="android.permission.NFC" />
-
-    <uses-permission android:name="android.permission.CALL_PHONE" />
-    <uses-permission android:name="android.permission.WRITE_CALENDAR" />
-
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.MANAGE_DOCUMENTS"/>
+    <uses-permission android:name="android.permission.NFC"/>
+    <uses-permission android:name="android.permission.CALL_PHONE"/>
+    <uses-permission android:name="android.permission.WRITE_CALENDAR"/>
     <uses-permission android:name="android.permission.INTERNET"/>
 
-    <uses-feature android:name="android.hardware.nfc" />
-
+    <uses-feature android:name="android.hardware.nfc"/>
 
     <application
         android:name=".ExamplesApplication"
@@ -29,13 +26,13 @@
         -->
         <uses-library
             android:name="com.example.will.never.exist"
-            android:required="false" />
+            android:required="false"/>
 
         <activity android:name=".MainActivity">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.MAIN"/>
 
-                <category android:name="android.intent.category.LAUNCHER" />
+                <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
         <activity
@@ -43,10 +40,10 @@
             android:label="@string/retrofit2test"
             android:parentActivityName=".MainActivity">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.MAIN"/>
 
-                <category android:name="android.intent.category.EXAMPLES_CODE" />
-                <category android:name="android.intent.category.SAMPLE_CODE" />
+                <category android:name="android.intent.category.EXAMPLES_CODE"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
             </intent-filter>
         </activity>
         <activity
@@ -56,10 +53,10 @@
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.MAIN"/>
 
-                <category android:name="android.intent.category.EXAMPLES_CODE" />
-                <category android:name="android.intent.category.SAMPLE_CODE" />
+                <category android:name="android.intent.category.EXAMPLES_CODE"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
             </intent-filter>
         </activity>
         <activity
@@ -67,27 +64,27 @@
             android:label="@string/new_alarm"
             android:parentActivityName=".MainActivity">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.MAIN"/>
 
-                <category android:name="android.intent.category.EXAMPLES_CODE" />
-                <category android:name="android.intent.category.SAMPLE_CODE" />
+                <category android:name="android.intent.category.EXAMPLES_CODE"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
             </intent-filter>
         </activity>
 
         <service
             android:name=".samples.newalarm.AlarmService"
             android:label="@string/alarm_service"
-            android:process="top.itmp.examples.newalarm"></service>
+            android:process="top.itmp.examples.newalarm"/>
 
         <activity
             android:name=".temps.ProgressNotification"
             android:label="@string/progress_notification"
             android:parentActivityName=".MainActivity">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.MAIN"/>
 
-                <category android:name="android.intent.category.EXAMPLES_CODE" />
-                <category android:name="android.intent.category.SAMPLE_CODE" />
+                <category android:name="android.intent.category.EXAMPLES_CODE"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
             </intent-filter>
         </activity>
         <activity
@@ -95,42 +92,42 @@
             android:label="@string/alias"
             android:parentActivityName=".MainActivity">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.MAIN"/>
 
-                <category android:name="android.intent.category.EXAMPLES_CODE" />
-                <category android:name="android.intent.category.SAMPLE_CODE" />
+                <category android:name="android.intent.category.EXAMPLES_CODE"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
             </intent-filter>
 
             <meta-data
                 android:name="android.app.alias"
-                android:resource="@xml/alias" />
+                android:resource="@xml/alias"/>
         </activity>
         <activity
             android:name=".samples.beam.Beam"
             android:label="@string/beam"
             android:launchMode="singleTop">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.MAIN"/>
 
-                <category android:name="android.intent.category.EXAMPLES_CODE" />
-                <category android:name="android.intent.category.SAMPLE_CODE" />
+                <category android:name="android.intent.category.EXAMPLES_CODE"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
             </intent-filter>
             <intent-filter>
-                <action android:name="android.nfc.action.NDEF_DISCOVERED" />
+                <action android:name="android.nfc.action.NDEF_DISCOVERED"/>
 
-                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.DEFAULT"/>
 
-                <data android:mimeType="application/com.example.android.beam" />
+                <data android:mimeType="application/com.example.android.beam"/>
             </intent-filter>
         </activity>
         <activity
             android:name=".train.FirstActivity"
             android:label="@string/first">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.MAIN"/>
 
-                <category android:name="android.intent.category.EXAMPLES_CODE" />
-                <category android:name="android.intent.category.SAMPLE_CODE" />
+                <category android:name="android.intent.category.EXAMPLES_CODE"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
             </intent-filter>
         </activity>
         <activity
@@ -139,73 +136,95 @@
             android:parentActivityName=".train.FirstActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".train.FirstActivity" />
+                android:value=".train.FirstActivity"/>
         </activity>
         <activity
             android:name=".train.ActionBarActivity"
             android:label="@string/actionbaractivity"
             android:theme="@style/CustomActionBarTheme">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.EXAMPLES_CODE" />
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.EXAMPLES_CODE"/>
             </intent-filter>
         </activity>
         <activity
             android:name=".train.IntentTest"
             android:label="@string/intent_test">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.EXAMPLES_CODE" />
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.EXAMPLES_CODE"/>
             </intent-filter>
         </activity>
         <activity
             android:name=".train.ShareActivity"
             android:label="@string/share_activity">
+
             <!-- filter for sending text; accepts SENDTO action with sms URI schemes -->
             <intent-filter>
-                <action android:name="android.intent.action.SENDTO" />
-                <category android:name="android.intent.category.DEFAULT" />
+                <action android:name="android.intent.action.SENDTO"/>
 
-                <data android:scheme="sms" />
-                <data android:scheme="smsto" />
+                <category android:name="android.intent.category.DEFAULT"/>
+
+                <data android:scheme="sms"/>
+                <data android:scheme="smsto"/>
             </intent-filter>
             <!-- filter for sending text or images; accepts SEND action and text or image data -->
             <intent-filter>
-                <action android:name="android.intent.action.SEND" />
-                <category android:name="android.intent.category.DEFAULT" />
+                <action android:name="android.intent.action.SEND"/>
 
-                <data android:mimeType="text/plain" />
-                <data android:mimeType="image/*" />
-            </intent-filter>
+                <category android:name="android.intent.category.DEFAULT"/>
 
-            <intent-filter>
-                <action android:name="android.intent.action.SEND" />
-                <category android:name="android.intent.category.DEFAULT" />
-                <data android:mimeType="image/*" />
+                <data android:mimeType="text/plain"/>
+                <data android:mimeType="image/*"/>
             </intent-filter>
             <intent-filter>
-                <action android:name="android.intent.action.SEND" />
-                <category android:name="android.intent.category.DEFAULT" />
-                <data android:mimeType="text/plain" />
-            </intent-filter>
-            <intent-filter>
-                <action android:name="android.intent.action.SEND_MULTIPLE" />
-                <category android:name="android.intent.category.DEFAULT" />
-                <data android:mimeType="image/*" />
-            </intent-filter>
+                <action android:name="android.intent.action.SEND"/>
 
+                <category android:name="android.intent.category.DEFAULT"/>
+
+                <data android:mimeType="image/*"/>
+            </intent-filter>
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.EXAMPLES_CODE" />
+                <action android:name="android.intent.action.SEND"/>
+
+                <category android:name="android.intent.category.DEFAULT"/>
+
+                <data android:mimeType="text/plain"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.SEND_MULTIPLE"/>
+
+                <category android:name="android.intent.category.DEFAULT"/>
+
+                <data android:mimeType="image/*"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.EXAMPLES_CODE"/>
             </intent-filter>
         </activity>
-
         <activity
             android:name=".volley.JsonRequest"
-            android:label="@string/json_request">
+            android:label="@string/json_request"
+            android:parentActivityName=".MainActivity">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.EXAMPLES_CODE" />
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.EXAMPLES_CODE"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".material.Main2Activity"
+            android:label="@string/title_activity_main2"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:parentActivityName=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.EXAMPLES_CODE"/>
             </intent-filter>
         </activity>
     </application>
