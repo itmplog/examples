@@ -35,4 +35,5 @@
     <string name="title_activity_main2">material/Main2Activity</string>
     <string name="agera_sample_start">agera/Agera Sample First</string>
     <string name="kotlinActivity">kotlin/Kotlin Activity</string>
+    <string name="rxandroid">rxAndroid/rxandroid</string>
 </resources>

@@ -249,7 +249,17 @@
                 <category android:name="android.intent.category.EXAMPLES_CODE"/>
             </intent-filter>
         </activity>
+        <activity
+            android:name=".rxandroid.RxAndroid"
+            android:label="@string/rxandroid"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
 
+                <category android:name="android.intent.category.EXAMPLES_CODE"/>
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>
