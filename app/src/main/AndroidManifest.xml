@@ -227,8 +227,9 @@
                 <category android:name="android.intent.category.EXAMPLES_CODE"/>
             </intent-filter>
         </activity>
-        <activity android:name=".agera.AgeraSampleStart"
-                  android:label="@string/agera_sample_start"
+        <activity
+            android:name=".agera.AgeraSampleStart"
+            android:label="@string/agera_sample_start"
             android:parentActivityName=".MainActivity"
             android:theme="@style/AppTheme">
             <intent-filter>
@@ -237,6 +238,18 @@
                 <category android:name="android.intent.category.EXAMPLES_CODE"/>
             </intent-filter>
         </activity>
+        <activity
+            android:name=".kotlin.KotlinActivity"
+            android:label="@string/kotlinActivity"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.EXAMPLES_CODE"/>
+            </intent-filter>
+        </activity>
+
     </application>
 
 </manifest>
