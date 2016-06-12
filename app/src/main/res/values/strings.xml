@@ -33,4 +33,5 @@
     <string name="share_activity">train/Share Activity</string>
     <string name="json_request">volley/Json Request</string>
     <string name="title_activity_main2">material/Main2Activity</string>
+    <string name="agera_sample_start">agera/Agera Sample First</string>
 </resources>
