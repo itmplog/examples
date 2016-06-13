@@ -39,4 +39,5 @@
     <string name="title_activity_main3">material/Main3Activity</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="firebase_activity_sample">firebase/FireBase Activity Sample</string>
 </resources>

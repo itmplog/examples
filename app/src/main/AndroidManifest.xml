@@ -271,6 +271,17 @@
                 <category android:name="android.intent.category.EXAMPLES_CODE"/>
             </intent-filter>
         </activity>
+        <activity
+            android:name=".firebase.FireBaseActivitySample"
+            android:label="@string/firebase_activity_sample"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.EXAMPLES_CODE"/>
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>

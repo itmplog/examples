@@ -9,6 +9,7 @@ import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.HurlStack;
 import com.android.volley.toolbox.ImageLoader;
 import com.android.volley.toolbox.Volley;
+import com.google.firebase.analytics.FirebaseAnalytics;
 
 /**
  * Created by hz on 2016/3/30.
@@ -21,6 +22,8 @@ public class ExamplesApplication extends Application {
     private static Context context;
     private static RequestQueue requestQueue;
     private static ImageLoader imageLoader;
+
+    private FirebaseAnalytics firebaseAnalytics;
 
     @Override
     public void onCreate() {
@@ -62,5 +65,12 @@ public class ExamplesApplication extends Application {
             });
         }
         return imageLoader;
+    }
+
+    public FirebaseAnalytics getFirebaseAnalytics() {
+        if(firebaseAnalytics == null){
+            firebaseAnalytics = FirebaseAnalytics.getInstance(this);
+        }
+        return firebaseAnalytics;
     }
 }
