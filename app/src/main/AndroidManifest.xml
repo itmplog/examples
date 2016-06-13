@@ -228,6 +228,17 @@
             </intent-filter>
         </activity>
         <activity
+            android:name=".material.Main3Activity"
+            android:label="@string/title_activity_main3"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.EXAMPLES_CODE"/>
+            </intent-filter>
+        </activity>
+        <activity
             android:name=".agera.AgeraSampleStart"
             android:label="@string/agera_sample_start"
             android:parentActivityName=".MainActivity"

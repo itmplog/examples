@@ -36,4 +36,7 @@
     <string name="agera_sample_start">agera/Agera Sample First</string>
     <string name="kotlinActivity">kotlin/Kotlin Activity</string>
     <string name="rxandroid">rxAndroid/rxandroid</string>
+    <string name="title_activity_main3">material/Main3Activity</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
 </resources>
