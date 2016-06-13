@@ -10,6 +10,13 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="top.itmp.examples.rxandroid.RxAndroid">
 
+    <TextView
+        android:id="@+id/text"
+        android:textColor="@color/accent"
+        android:textSize="22sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
