@@ -91,7 +91,13 @@ dependencies {
     compile 'com.afollestad.material-dialogs:core:0.8.5.9'
     //compile 'com.afollestad.material-dialogs:commons:0.8.5.9'
 
+    //spring for android
+    compile 'org.springframework.android:spring-android-rest-template:2.0.0.M3'
+
 }
 repositories {
     mavenCentral()
+    maven {
+        url 'https://repo.spring.io/libs-milestone'
+    }
 }
