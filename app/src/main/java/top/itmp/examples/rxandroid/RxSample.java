@@ -1,15 +1,21 @@
 package top.itmp.examples.rxandroid;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.firebase.crash.FirebaseCrash;
+
+import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.concurrent.Callable;
 
@@ -20,6 +26,7 @@ import rx.SingleSubscriber;
 import rx.Subscription;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.functions.Action1;
+import rx.functions.Func1;
 import rx.schedulers.Schedulers;
 import top.itmp.examples.R;
 
@@ -55,6 +62,8 @@ public class RxSample extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_rxsample);
 
+        FirebaseCrash.log("RxSample opened!");
+
         scrollView = (ScrollView) findViewById(R.id.scrollView);
         textView = (TextView) findViewById(R.id.text);
         click = (Button) findViewById(R.id.button);
@@ -63,6 +72,9 @@ public class RxSample extends AppCompatActivity{
         click.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                textView.setText("");
+                textView.setTextColor(Color.CYAN);
+
                 listObservable.subscribe(new Observer<List<String>>() {
                     @Override
                     public void onCompleted() {
@@ -141,12 +153,58 @@ public class RxSample extends AppCompatActivity{
 
         Observable.just("Hello, world!")
                 //.subscribe(s -> System.out.println(s));
+                .map(new Func1<String, String>() {
+                    @Override
+                    public String call(String s) {
+                        return s + "llsf";
+                    }
+                })
+                .map(new Func1<String, Integer>() {
+                    @Override
+                    public Integer call(String s) {
+                        return s.hashCode();
+                    }
+                })
+
+                /*.subscribe(new Action1<Integer>() {
+                    @Override
+                    public void call(Integer integer) {
+                        System.out.println(Integer.valueOf(integer));
+                    }
+                });*/
+
+                .map(new Func1<Integer, String>() {
+                    @Override
+                    public String call(Integer integer) {
+                        //return Integer.toString(integer);
+                        return String.valueOf(integer);
+                    }
+                })
                 .subscribe(new Action1<String>() {
                     @Override
                     public void call(String s) {
                         System.out.println(s);
                     }
                 });
+
+        click1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                textView.setText("");
+                textView.setTextColor(Color.MAGENTA);
+                //Observable.just("aa", "bb", "cc")
+                List<String> lists = new ArrayList<String>(Arrays.asList("aa, bb, cc, dd".split(", ")));
+
+                Observable.from(lists)
+                        .subscribe(new Action1<String>() {
+                            @Override
+                            public void call(String s) {
+                                   textView.append(s);
+                            }
+                        });
+            }
+        });
 
     }
 
