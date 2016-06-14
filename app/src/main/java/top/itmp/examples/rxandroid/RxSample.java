@@ -4,7 +4,6 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
-import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ScrollView;
@@ -13,7 +12,6 @@ import android.widget.Toast;
 
 import com.google.firebase.crash.FirebaseCrash;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -197,11 +195,14 @@ public class RxSample extends AppCompatActivity{
                 List<String> lists = new ArrayList<String>(Arrays.asList("aa, bb, cc, dd".split(", ")));
 
                 Observable.from(lists)
-                        .subscribe(new Action1<String>() {
+                        .filter(new Func1<String, Boolean>() {
                             @Override
-                            public void call(String s) {
-                                   textView.append(s);
+                            public Boolean call(String s) {
+                                return s != null;
                             }
+                        })
+                        .subscribe(s -> {
+                               textView.append(s);
                         });
             }
         });
