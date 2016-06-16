@@ -293,6 +293,18 @@
                 <category android:name="android.intent.category.EXAMPLES_CODE"/>
             </intent-filter>
         </activity>
+        <activity
+            android:name=".fabric.PubNubActivity"
+            android:label="@string/pubnub"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.EXAMPLES_CODE"/>
+            </intent-filter>
+        </activity>
+
         <meta-data
             android:name="io.fabric.ApiKey"
             android:value="450926062ec7b34d130d36b5a51319d1427400cf" />

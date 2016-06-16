@@ -41,4 +41,10 @@
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="firebase_activity_sample">firebase/FireBase Activity Sample</string>
     <string name="rxsample">rxsample/RxJava Sample</string>
+
+
+    <string name="com.pubnub.publishKey" translatable="false">pub-c-013a63e7-4a65-489b-bedc-ace0a2328078</string>
+    <string name="com.pubnub.subscribeKey" translatable="false">sub-c-1020fb38-32cc-11e6-991f-02ee2ddab7fe</string>
+    <string name="com.pubnub.secretKey" translatable="false">sec-c-ZjAxZjUxYmMtYmE1OS00Y2VhLWJhODUtOWQyNmM2YzBmZWQ0</string>
+    <string name="pubnub">fabric/PubNub</string>
 </resources>
